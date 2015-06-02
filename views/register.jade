@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+   title Sign Up
+ 
+  body
+ 
+    h1 Sign Up
+ 
+    form(name = "find", action = "/registration", method = "post")
+      | Child first name
+      input(type="text", name="child.firstname", id="child.firstname", required)
+      br
+      | Child surname
+      input(type="text", name="child.lastname", id="child.lastname", required)
+      br
+      | Firstname
+      input(type="text", name="firstname", id="firstname", required)
+      br
+      | Lastname
+      input(type="text", name="lastname", id="lastname", required)
+      br
+      | Email
+      input(type="email", name="email", id="email", required)
+      br
+      input(type="submit", value="Search")
