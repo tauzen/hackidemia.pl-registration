@@ -1,0 +1,21 @@
+{
+  "name": "hackidemia.pl-registration",
+  "version": "0.0.1",
+  "authors": [
+    "https://github.com/tauzen"
+  ],
+  "description": "hackidemia.pl info and event registration website",
+  "main": "client/index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "lato": "~0.3.0"
+  }
+}
