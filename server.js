@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var winston = require('winston');
 
-var CONF = require('./configuration');
-var registration = require('./src/registration_controller.js');
+var CONF = require('./server/configuration');
+var registration = require('./server/src/registration_controller.js');
 
 var app = express();
 var http = require('http').Server(app);
@@ -24,7 +24,7 @@ mongoose.connect(CONF.MONGO_CONNECTION, function(err) {
   winston.info('MongoDB connection up.');
 });
 
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/server/views');
 app.set('view_options', {layout : false});
 app.use('/static', express.static(__dirname + '/static'));
 app.use(bodyParser.urlencoded({ extended: true }));

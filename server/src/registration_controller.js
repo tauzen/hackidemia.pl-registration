@@ -2,6 +2,7 @@
 
 var crypto = require('crypto');
 var winston = require('winston');
+var Promise = require('promise');
 
 var Registration = require('./registration_model');
 var sendmail = require('./sendmail');
@@ -43,7 +44,7 @@ exports.verify = function(req, res) {
     }
 
     reg.confirmed = true;
-    delete req.token;
+    reg.token = undefined;
     return reg.save();
   })
   .then(function(reg) {
