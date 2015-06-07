@@ -8,14 +8,21 @@ module.exports = {
       {
         id: 'p_1',
         title: 'Warsztaty',
-        description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.',
+        description: 'Hackidemia to międzynarodowa społeczność młodych wynalazców oraz odkrywców, ' +
+                      'której celem jest stworzenie środowiska sprzyjającego edukacji poprzez zabawę. ' +
+                      'Realizujemy ten cel organizując warsztaty, festiwale edukacyjne oraz lekcje w formie interaktywnych laboratoriów.<br/>' +
+                      'Zachęcamy dzieci, aby projektowały, tworzyły i udoskonalały, a przez to budowały lepszą przyszłość.',
         style: 'header--workshops',
         href: 'warsztaty'
       },
       {
         id: 'p_1',
         title: 'Zgłoszenia na warsztaty',
-        description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.',
+        description: 'Warsztaty skierowane są do dzieci w wieku 8-12 lat.' +
+                      'Niemniej jednak z chęcią przywitamy też nieco starsze "dzieci" ;). ' +
+                      'Podczas warsztatów niezbędna jest obecność rodzica lub opiekuna.' +
+                      'Warsztaty odbęda się 11 lipca 2015 w godzinach 9.00-16.00. ' +
+                      'Chęć udziału nalezy zgłosić korzystając z poniższego formularza.',
         style: 'header--registration',
         href: 'zgloszenia'
       },
