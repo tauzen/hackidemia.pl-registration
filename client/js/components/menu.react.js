@@ -3,6 +3,8 @@
 var React = require('react');
 
 var Menu = React.createClass({
+   mixins: [Navigation],
+
   render: function() {
     return (
       <nav className="navbar navbar-default navbar-fixed-top">
@@ -19,9 +21,9 @@ var Menu = React.createClass({
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav navbar-right">
-              <li><a href="#warsztaty" className="navitem__workshops">WARSZTATY</a></li>
-              <li><a href="#zgloszenia" className="navitem__registration">ZGŁOSZENIA</a></li>
-              <li><a href="#lokalizacja" className="navitem__location">LOKALIZACJA</a></li>
+              <li><a href="#warsztaty" className="navitem__workshops" data-scroll="#warsztaty" onClick={this.navigate}>WARSZTATY</a></li>
+              <li><a href="#zgloszenia" className="navitem__registration" data-scroll="#zgloszenia" onClick={this.navigate}>ZGŁOSZENIA</a></li>
+              <li><a href="#lokalizacja" className="navitem__location" data-scroll="#lokalizacja" onClick={this.navigate}>LOKALIZACJA</a></li>
             </ul>
           </div>
         </div>

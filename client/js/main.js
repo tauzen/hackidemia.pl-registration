@@ -1,6 +1,8 @@
 'use strict';
 
+window.$ = require('jquery');
 window.React = React; // export for http://fb.me/react-devtools
+window.Navigation = require('./mixins/navigation');
 var React = require('react');
 var Storage = require('./storage');
 
