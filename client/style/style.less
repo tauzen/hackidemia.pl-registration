@@ -1,16 +1,283 @@
 @import (inline) "../../bower_components/bootstrap/dist/css/bootstrap.min.css";
+@import (inline) "../../bower_components/font-awesome/css/font-awesome.min.css";
 
 @import "../../bower_components/lato/less/lato.less";
 @lato-font-path: 'font';
 
-@base-color: #f7f7f7;
-@header-color: #ffffff;
-@footer-color: #d8d8d8;
-@location-color: #c5046f;
-@registration-color: #f59903;
-@workshop-color: #3ebddc;
+/**custom colors**/
+
+@hck-pink: #c5046f;
+@hck-orange: #f59903;
+@hck-blue: #3ebddc;
+@hck-gray--dark: #4a4a4a;
+@hck-gray--medium: #9b9b9b;
+@hck-gray--lignt: #d8d8d8;
+@hck-gray--extra-light: #f7f7f7;
+
+
+
 
 body {
+  margin-top: 50px;
   font-family: "Lato";
-  background-color: @base-color;
+  background-color: @hck-gray--extra-light;
+  color: @hck-gray--medium;
+  font-size: 14px;
 }
+
+/*************************************/
+/************Top menu(fixed)**********/
+/*************************************/
+
+.navbar-default {
+  background-color: #ffffff;
+  border: 0px;
+}
+
+.navitem__workshops {
+  color: @hck-blue !important
+}
+
+.navitem__registration {
+  color: @hck-orange !important
+}
+
+.navitem__location {
+  color: @hck-pink !important
+}
+
+/******************************************/
+/**Common elements (headers, containers)**/
+/*****************************************/
+
+.btn-hck {
+  height: 45px;
+  text-align: center;
+  padding: 0px 15px;
+  font-size: 15px;
+  line-height: 1.428571429;
+  border: 0px;
+  border-radius: 20px;
+  background-color: @hck-orange;
+  color: white;
+  text-transform: uppercase;
+}
+
+.divider {
+  height: 35px;
+  width: 100%;
+  background-image: url(./images/divider.png);
+  background-repeat: repeat-x;
+}
+
+.header {
+  min-height: 170px;
+}
+
+.header--workshops {
+  background-color: @hck-blue !important
+}
+
+.header--registration {
+  background-color: @hck-orange !important
+}
+
+.header--location {
+  background-color: @hck-pink !important
+}
+
+.header_inner {
+  max-width: 690px;
+  margin: auto;
+  padding: 30px 15px;
+  text-align: center;
+  color: white;
+}
+
+.header__title {
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+.container--workshops {
+  max-width: 960px;
+  margin-top: 25px;
+}
+
+.container--registration {
+  max-width: 960px;
+  min-height: 385px;
+  margin-top: 25px;
+}
+
+.info--centered {
+  margin: 50px auto 0px auto;
+  text-align: center;
+  font-size: 30px;
+  color: @hck-pink;
+}
+
+.info__robot-image {
+  max-height: 100px
+}
+
+/*************************************/
+/**************Cover page*************/
+/*************************************/
+
+.cover__photo {
+  background-image: url(./images/cover.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+}
+
+.cover__inner {
+  margin: auto;
+  max-width: 550px;
+  text-align: center;
+  color: white;
+}
+
+.cover__robot-image {
+  margin-top: 40px;
+}
+
+.cover__main-description {
+  margin-top: 100px;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.cover__main-description__title {
+  font-size: 30px;
+}
+
+
+/*************************************/
+/***********PAGE: workshops***********/
+/*************************************/
+.workshop-card {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.workshop-card__photo-container {
+  background-color: @hck-gray--medium;
+  height: 200px;
+  width: 100%;
+}
+
+.workshop-card__photo {
+  background-color: @hck-gray--medium;
+  height: 200px;
+  max-width: 100%;
+}
+
+.workshop-card__note {
+  background-color: white;
+  height: 300px;
+  overflow: hidden;
+  padding: 30px 25px;
+}
+
+.workshop-card__note__title {
+  color: @hck-blue;
+  font-size: 17px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/*************************************/
+/*********PAGE: registration*********/
+/*************************************/
+.registration__section {
+  margin-bottom: 30px;
+  color: @hck-gray--dark;
+}
+
+.registration__subtitle {
+  text-transform: uppercase;
+}
+
+.registration__label {
+  padding: 15px 15px 0px 15px;
+}
+
+.registration__info {
+  color: @hck-gray--medium;
+  font-size: 12px;
+}
+
+.registration__input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid @hck-orange;
+  border-radius: 15px;
+  padding: 0px 15px;
+}
+
+/*************************************/
+/***********PAGE: location***********/
+/*************************************/
+.location__map-container {
+  overflow: hidden;
+  height: 500px;
+  width: 100%;
+}
+
+#location__map {
+  height: 500px;
+  width: 100%;
+}
+
+.location__map img {
+  max-width: none !important;
+  background: none !important
+}
+
+
+/*************************************/
+/****************Footer***************/
+/*************************************/
+.footer {
+  font-size: 17px;
+  text-align: center;
+  background-color: @hck-gray--lignt;
+}
+
+.footer__inner {
+  padding: 40px 0px;
+  margin: auto;
+  max-width: 800px;
+}
+
+.footer__inner a {
+  color: @hck-pink;
+}
+
+.footer__contact {
+  margin-top: 40px;
+}
+
+.footer__contact .circle{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-color: @hck-gray--dark;
+  display: inline-block;
+  margin: 0px 25px;
+}
+
+.footer__contact i{
+  padding-top: 10px;
+}
+
+.footer__contact a{
+  color: white;
+}
+
+
+

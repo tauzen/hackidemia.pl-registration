@@ -16,6 +16,8 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.4",
+    "bootstrap-modal-collapse-transition": "~0.0.4",
+    "font-awesome": "~4.3.0",
     "lato": "~0.3.0"
   }
 }
