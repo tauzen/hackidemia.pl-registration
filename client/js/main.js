@@ -1,6 +1,11 @@
 'use strict';
 
 window.$ = require('jquery');
+window.jQuery = require('jquery');
+
+require('../../bower_components/bootstrap-modal-collapse-transition/collapse.min');
+require('../../bower_components/bootstrap-modal-collapse-transition/transition.min');
+
 window.React = React; // export for http://fb.me/react-devtools
 window.Navigation = require('./mixins/navigation');
 var React = require('react');
@@ -31,7 +36,12 @@ var App = React.createClass({
 document.addEventListener("DOMContentLoaded", function(){
   Storage.init();
   React.render(<App/>, document.getElementById("react"));
+
+  $(".navbar-nav li a").click(function(event) {
+    $(".navbar-collapse").collapse('hide');
+  });
 });
+
 
 function init_map(){
     var myOptions = {zoom:15, center:new google.maps.LatLng(52.221973,21.01772600000004), mapTypeId:google.maps.MapTypeId.ROADMAP, scrollwheel:false};

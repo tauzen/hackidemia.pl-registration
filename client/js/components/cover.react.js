@@ -7,7 +7,7 @@ var Cover = React.createClass({
 
   render: function() {
     return (
-      <div className='cover__photo'> 
+      <div className='cover__photo'>
         <div className='cover__inner'>
           <img className='cover__robot-image' src="./images/robot.png"></img>
           <div className='cover__main-description'>
