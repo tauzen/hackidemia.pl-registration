@@ -18,10 +18,10 @@ module.exports = {
       {
         id: 'p_1',
         title: 'Zgłoszenia na warsztaty',
-        description: 'Warsztaty skierowane są do dzieci w wieku 8-12 lat.' +
+        description: 'Warsztaty skierowane są do dzieci w wieku 8-12 lat. ' +
                       'Niemniej jednak z chęcią przywitamy też nieco starsze "dzieci" ;). ' +
-                      'Podczas warsztatów niezbędna jest obecność rodzica lub opiekuna.' +
-                      'Warsztaty odbęda się 11 lipca 2015 w godzinach 9.00-16.00. ' +
+                      'Podczas warsztatów niezbędna jest obecność rodzica lub opiekuna. ' +
+                      'Warsztaty odbęda się 11 lipca 2015 w godzinach 10.00-15.00. ' +
                       'Chęć udziału nalezy zgłosić korzystając z poniższego formularza.',
         style: 'header--registration',
         href: 'zgloszenia'
@@ -39,7 +39,7 @@ module.exports = {
       {
         id: 'w_1',
         title: 'Pisz światłem',
-        description: 'Rodzice wraz z dziećmi będą mogli zaprojektować opaskę na nadgarstek, do' +
+        description: 'Rodzice wraz z dziećmi będą mogli zaprojektować opaskę na nadgarstek, do ' +
                       'której zostaną przyszyte płytki Lilypad wraz z diodami LED. Każdy ' +
                       'uczestnik warsztatów będzie mógł zaprogramować wraz z ' +
                       'mentorem, jaki napis świetlny ma się pojawić w chwili poruszania ' +
