@@ -53,6 +53,6 @@ exports.verify = function(req, res) {
   })
   .then(null, function(err) {
     winston.info('Registration confirmation failed', err);
-    res.send('Fail');
+    res.render('rejected.jade', { layout: false });
   });
 };
