@@ -53,6 +53,15 @@ var RegistrationForm = React.createClass({
                 <input className='registration__input' id='email' name='email' type='email' required></input>
               </div>
             </div>
+
+            <div className='row registration__section'>
+              <div className='col-sm-12'>
+                <input type='checkbox' id='permission' className='registration__checkbox' required>
+                  Zgadzam się z <a href='./Regulamin_letniego_hackathonu_2015.pdf' target='_blank'>Regulaminem uczestnictwa w warsztatach</a>
+                </input>
+              </div>
+            </div>
+
             <div className='row registration__section'>
               <div className='col-sm-12'>
                 <button id='accept' className='btn-hck'>Wyślij zgłoszenie</button>

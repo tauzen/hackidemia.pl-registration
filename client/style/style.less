@@ -14,7 +14,7 @@
 @hck-gray--lignt: #d8d8d8;
 @hck-gray--extra-light: #f7f7f7;
 
-
+@screen-lg-min: 1200px;
 
 
 body {
@@ -146,7 +146,10 @@ body {
 }
 
 .cover__main-description {
-  margin-top: 100px;
+  margin-top: 60px;
+  @media (min-width: @screen-lg-min) {
+    margin-top: 100px;
+  };
   margin-bottom: 40px;
   font-size: 20px;
 }
@@ -194,7 +197,7 @@ body {
 /*********PAGE: registration*********/
 /*************************************/
 .registration__section {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: @hck-gray--dark;
 }
 
@@ -217,6 +220,20 @@ body {
   border: 1px solid @hck-orange;
   border-radius: 15px;
   padding: 0px 15px;
+}
+
+.registration__checkbox {
+  margin-right: 5px !important;
+}
+
+.registration__section a {
+  color: inherit;
+  font-weight: bold;
+}
+
+.registration__section a:hover {
+  color: @hck-pink;
+  text-decoration: none;
 }
 
 /*************************************/
@@ -249,7 +266,7 @@ body {
 }
 
 .footer__inner {
-  padding: 40px 0px;
+  padding: 40px 10px;
   margin: auto;
   max-width: 800px;
 }
