@@ -10,7 +10,7 @@ module.exports = function(grunt) {
           optimization: 2
         },
         files: {
-          'static/style.css':'client/style/style.less'
+          'static/css/style.css':'client/style/style.less'
         }
       }
     },
@@ -23,14 +23,14 @@ module.exports = function(grunt) {
           }
         },
         src: 'client/js/main.js',
-        dest: 'static/client.js'
+        dest: 'static/js/client.js'
       },
       production: {
         options: {
           transform: ['babelify', 'debowerify', 'uglifyify']
         },
         src: '<%= browserify.dev.src %>',
-        dest: 'static/client.js'
+        dest: 'static/js/client.js'
       }
     },
     watch: {

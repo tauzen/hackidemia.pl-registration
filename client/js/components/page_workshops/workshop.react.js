@@ -8,7 +8,7 @@ var Workshop = React.createClass({
       <div className='col-sm-6 col-md-4'>
         <div className='workshop-card'>
           <div className='workshop-card__photo-container'>
-            <img className='workshop-card__photo' src={'./images/' + this.props.photoPath}></img>
+            <img className='workshop-card__photo' src={'/static/images/' + this.props.photoPath}></img>
           </div>
           <div className='workshop-card__note'>
             <div className='workshop-card__note__title'>{this.props.title}</div>
