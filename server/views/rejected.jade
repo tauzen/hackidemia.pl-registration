@@ -1,8 +1,16 @@
 doctype html
 html
   head
-   title Confirmed Registration
- 
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="initial-scale=1")
+    title Confirmed Registration
+    link(href="/style.css", rel="stylesheet")
   body
- 
-    h1 Registration rejected
+    div#main
+      div.info--centered
+        i.fa.fa-frown-o.fa-3x
+        p Błąd rejestracji.
+        p 
+          | Link, którego użyto wydaje się być nieprawidłowy. 
+          a(href="/") Spróbuj ponownie.
