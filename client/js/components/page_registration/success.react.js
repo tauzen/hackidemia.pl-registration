@@ -6,7 +6,7 @@ var RegistrationSuccess = React.createClass({
   render: function() {
     return (
       <div className='info--centered'>
-        <img className='info__robot-image' src="./images/logo_robot_hackidemia.png"></img>
+        <img className='info__robot-image' src="/static/images/logo_robot_hackidemia.png"></img>
         <br></br>
         <span>Rejestracja została zapisana w systemie.</span>
         <br></br>

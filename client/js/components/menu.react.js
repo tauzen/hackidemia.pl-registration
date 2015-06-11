@@ -16,7 +16,7 @@ var Menu = React.createClass({
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <img src="./images/logo.png"></img>
+            <img src="/static/images/logo.png"></img>
           </div>
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

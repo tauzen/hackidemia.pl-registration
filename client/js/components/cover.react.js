@@ -9,7 +9,7 @@ var Cover = React.createClass({
     return (
       <div className='cover__photo'>
         <div className='cover__inner'>
-          <img className='cover__robot-image' src="./images/robot.png"></img>
+          <img className='cover__robot-image' src="/static/images/robot.png"></img>
           <div className='cover__main-description'>
             <span className='cover__main-description__title'>Wakacyjny hackaton dla dzieci</span>
             <br></br>
