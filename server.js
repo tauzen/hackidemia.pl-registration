@@ -26,10 +26,10 @@ mongoose.connect(CONF.MONGO_CONNECTION, function(err) {
 
 app.set('views', __dirname + '/server/views');
 app.set('view_options', {layout : false});
-app.use('/', express.static(__dirname + '/static'));
+app.use('/static', express.static(__dirname + '/static'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//app.get('/', registration.index);
+app.get('/', registration.index);
 app.post('/registration/', registration.create);
 app.get('/registration/confirm/:token', registration.verify);
  
