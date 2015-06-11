@@ -10,7 +10,7 @@ var sendmail = require('./sendmail');
 
 module.exports.index = function(req, res) {
   winston.info('Registration index requested');
-  res.render('register.jade', {layout: false});
+  res.render('index.jade', {layout: false});
 };
 
 module.exports.create = function(req, res) {
