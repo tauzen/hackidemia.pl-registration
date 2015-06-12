@@ -19,9 +19,10 @@ var createEmail = function(registration) {
   var confirmationURL = CONFIRMATION_URL + registration.token;
 
   var subject = 'Potwierdzenie rejestracji';
-  var html = '<b>Witamy<b><p>Prosimy o potwierdzenie chęci udziału poprzez' + 
-    'kliknięcie w poniższy link: <br /> <a href="' + confirmationURL + '">' +
-    confirmationURL + '</a></p>';
+  var html = '<p>Witamy,</p><p>Prosimy o potwierdzenie chęci udziału poprzez ' +
+    'kliknięcie w poniższy link: <br /><a href="' + confirmationURL + '">' +
+    confirmationURL + '</a><br /><p>Pozdrawiamy,<br />' + 
+    '<a href="http://hackidemia.pl>Hackidemia.pl</a></p>';
 
   return {
     from: FROM_EMAIL,

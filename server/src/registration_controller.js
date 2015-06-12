@@ -24,12 +24,13 @@ module.exports.create = function(req, res) {
 
   reg.save(function(err, reg) {
     if(err) {
-      res.send('fail ' + err);
+      winston.info(JSON.stringify(err));
+      res.sendStatus(500);
       return;
     }
     
     winston.info('Registration saved in db');
-    res.send('ok ' + reg.token);
+    res.sendStatus(200);
     sendmail(reg);
   });
 };
