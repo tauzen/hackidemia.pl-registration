@@ -49,11 +49,11 @@ exports.verify = function(req, res) {
     return reg.save();
   })
   .then(function(reg) {
-    winston.info('Registration cofirmed');
+    winston.info('Registration cofirmed', reg.toString());
     res.render('confirmed.jade', { layout: false });
   })
   .then(null, function(err) {
-    winston.info('Registration confirmation failed', err);
+    winston.info('Registration confirmation failed, no token ' + req.params.token);
     res.render('rejected.jade', { layout: false });
   });
 };

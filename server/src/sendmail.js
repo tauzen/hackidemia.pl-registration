@@ -18,11 +18,11 @@ transport.use('compile', htmlToText());
 var createEmail = function(registration) {
   var confirmationURL = CONFIRMATION_URL + registration.token;
 
-  var subject = 'Potwierdzenie rejestracji';
+  var subject = 'Wakacyjny hackaton dla dzieci 11 lipca 2015, potwierdzenie udziału.';
   var html = '<p>Witamy,</p><p>Prosimy o potwierdzenie chęci udziału poprzez ' +
     'kliknięcie w poniższy link: <br /><a href="' + confirmationURL + '">' +
     confirmationURL + '</a><br /><p>Pozdrawiamy,<br />' + 
-    '<a href="http://hackidemia.pl>Hackidemia.pl</a></p>';
+    '<a href="http://hackidemia.pl">Hackidemia.pl</a></p>';
 
   return {
     from: FROM_EMAIL,
