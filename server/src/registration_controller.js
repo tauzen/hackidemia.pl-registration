@@ -25,7 +25,14 @@ module.exports.create = function(req, res) {
   reg.save(function(err, reg) {
     if(err) {
       winston.info(JSON.stringify(err));
-      res.sendStatus(500);
+      if(err.name === 'ValidationError') {
+        var status = (err.errors.email &&
+                      err.errors.email.message === 'unique') ? 409 : 400;
+        res.sendStatus(status);
+        return;
+      }
+
+      res.send(500);
       return;
     }
     
