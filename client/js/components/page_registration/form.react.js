@@ -20,14 +20,14 @@ var RegistrationForm = React.createClass({
                 <label className='registration__label' for='child.firstname'>
                   Imię <span className='registration__info'>(pole wymagane)</span>
                 </label> 
-                <input className='registration__input' id='child.firstname' name='child.firstname' type='text' placeholder='Imię dziecka' required></input>
+                <input className='registration__input' id='child.firstname' name='child.firstname' type='text' placeholder='Imię dziecka' required pattern='[a-zA-Z]{3,50}' title="A - Z, a - z, min 3, max 50"></input>
               </div>
 
               <div className='col-sm-6'>
                 <label className='registration__label' for='child.lastname'>
                   Nazwisko <span className='registration__info'>(pole wymagane)</span>
                 </label>
-                <input className='registration__input' id='child.lastname' name='child.lastname' type='text' placeholder='Nazwisko dziecka' required></input>
+                <input className='registration__input' id='child.lastname' name='child.lastname' type='text' placeholder='Nazwisko dziecka' required pattern='[a-zA-Z]{3,50}' title="A - Z, a - z, min 3, max 50"></input>
               </div>
             </div>
             <div className='row registration__section'>
@@ -36,14 +36,14 @@ var RegistrationForm = React.createClass({
                 <label className='registration__label' for='firstname'>
                   Imię <span className='registration__info'>(pole wymagane)</span>
                 </label>
-                <input className='registration__input' id='firstname' name='firstname' type='text' placeholder='Imię rodzica/opiekuna' required></input>
+                <input className='registration__input' id='firstname' name='firstname' type='text' placeholder='Imię rodzica/opiekuna' required pattern='[a-zA-Z]{3,50}' title="A - Z, a - z, min 3, max 50"></input>
               </div>
 
               <div className='col-sm-6'>
                 <label className='registration__label' for='lastname'>
                   Nazwisko <span className='registration__info'>(pole wymagane)</span>
                 </label>
-                <input className='registration__input' id='lastname' name='lastname' type='text' placeholder='Nazwisko rodzica/opiekuna' required></input>
+                <input className='registration__input' id='lastname' name='lastname' type='text' placeholder='Nazwisko rodzica/opiekuna' required pattern='[a-zA-Z]{3,50}' title="A - Z, a - z, min 3, max 50"></input>
               </div>
 
               <div className='col-sm-6'>

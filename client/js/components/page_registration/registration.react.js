@@ -23,7 +23,7 @@ var RegistrationPage = React.createClass({
           this.setState({currentView: "success"})
         }.bind(this),
         error: function(xhr, status, err) {
-          this.setState({currentView: "error"})
+          this.setState({currentView: "error", status: xhr.status})
         }.bind(this)
       });
   },
@@ -43,7 +43,7 @@ var RegistrationPage = React.createClass({
           content = <RegistrationSuccess/>
           break;
       case "error":
-          content = <RegistrationError/>
+          content = <RegistrationError status={this.state.status}/>
           break;
       default:
           content = <RegistrationForm onHandleSubmit={this.createRegistration}/>
