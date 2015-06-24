@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         }
       },
       browserify: {
-        files: 'client/js/*.js',
+        files: 'client/js/**/*.js',
         tasks: ['browserify:dev']
       }
     }
