@@ -18,7 +18,7 @@ module.exports = {
       {
         id: 'p_1',
         title: 'Zgłoszenia na warsztaty',
-        description: 'Warsztaty skierowane są do dzieci w wieku 8-12 lat. ' +
+        description: 'Warsztaty skierowane są do dzieci w wieku 8-14 lat. ' +
                       'Niemniej jednak z chęcią przywitamy też nieco starsze "dzieci" ;). ' +
                       'Podczas warsztatów niezbędna jest obecność rodzica lub opiekuna. ' +
                       'Warsztaty odbęda się 11 lipca 2015 w godzinach 10.00-15.00. ' +
