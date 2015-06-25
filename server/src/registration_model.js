@@ -11,8 +11,9 @@ var nameValidator = [
     message: '{PATH} should be between {ARGS[0]} and {ARGS[1]} characters'
   }),
   validate({
-    validator: 'isAlphanumeric',
-    message: 'Name should contain aplha-numeric chracters only'
+    validator: 'matches',
+    arguments: ['[a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ]{3,50}'],
+    message: 'Only letters allowed'
   })
 ];
 
