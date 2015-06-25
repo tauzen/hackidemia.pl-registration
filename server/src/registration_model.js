@@ -24,6 +24,7 @@ var emailValidator = validate({
 var registrationSchema = new mongoose.Schema({
   ObjectId: mongoose.Schema.ObjectId,
   date: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
   child: {
     firstname: { type: String, required: true, validate: nameValidator },
     lastname: { type: String, required: true, validate: nameValidator },
@@ -38,13 +39,18 @@ var registrationSchema = new mongoose.Schema({
   },
   firstname: { type: String, required: true, validate: nameValidator },
   lastname: { type: String, required: true, validate: nameValidator },
-  phone: { type: String },
   confirmed: { type: Boolean, default: false },
+  waitingList: { type: Boolean, default: false },
   token: { type: String }
 });
 
 // using message to distinguish unique violation from
 // other validation errors
 registrationSchema.plugin(uniqueValidator, { message: 'unique' });
+
+registrationSchema.pre('save', function(next){
+  this.updatedAt = Date.now();
+  next();
+});
  
 module.exports = mongoose.model('Registration', registrationSchema);
