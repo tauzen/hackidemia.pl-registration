@@ -14,5 +14,7 @@ module.exports = {
   SERVER_LOG: 'log/server.log',
   ERROR_LOG: 'log/error.log',
   FROM_EMAIL: 'email@email.com',
-  CONFIRMATION_URL: 'http://localhost:3385/registration/confirm/'
+  CONFIRMATION_URL: 'http://localhost:3385/registration/confirm/',
+  // TODO move to db
+  LIMIT: 40
 };
