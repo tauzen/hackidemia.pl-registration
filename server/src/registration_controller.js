@@ -10,7 +10,7 @@ var sendmail = require('./sendmail');
 
 module.exports.index = function(req, res) {
   winston.info('Registration index requested');
-  res.render('index.jade', {layout: false});
+  res.render('index.jade');
 };
 
 module.exports.create = function(req, res) {
@@ -57,10 +57,10 @@ exports.verify = function(req, res) {
   })
   .then(function(reg) {
     winston.info('Registration cofirmed', reg.toString());
-    res.render('confirmed.jade', { layout: false });
+    res.render('confirmed.jade');
   })
   .then(null, function(err) {
     winston.info('Registration confirmation failed, no token ' + req.params.token);
-    res.render('rejected.jade', { layout: false });
+    res.render('rejected.jade');
   });
 };

@@ -1,6 +1,7 @@
 'use strict';
 
 var express = require('express');
+var favicon = require('express-favicon');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var winston = require('winston');
@@ -27,6 +28,7 @@ mongoose.connect(CONF.MONGO_CONNECTION, function(err) {
 app.set('views', __dirname + '/server/views');
 app.set('view_options', {layout : false});
 app.use('/static', express.static(__dirname + '/static'));
+app.use(favicon(__dirname + '/static/favicon.ico'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', registration.index);

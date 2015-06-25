@@ -1,16 +1,9 @@
-doctype html
-html
-  head
-    meta(charset="utf-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
-    meta(name="viewport", content="initial-scale=1")
-    title Hackidemia.pl - Spróbuj ponownie
-    link(href="/static/css/style.css", rel="stylesheet")
-  body
-    div#main
-      div.info--centered
-        i.fa.fa-frown-o.fa-3x
-        p Błąd rejestracji.
-        p 
-          | Link, którego użyto wydaje się być nieprawidłowy. 
-          a(href="/") Spróbuj ponownie.
+extends layout
+block content
+  div#main
+    div.info--centered
+      i.fa.fa-frown-o.fa-3x
+      p Błąd rejestracji.
+      p 
+        | Link, którego użyto wydaje się być nieprawidłowy. 
+        a(href="/") Spróbuj ponownie.
