@@ -73,6 +73,13 @@ var RegistrationForm = React.createClass({
                 </input>
               </div>
             </div>
+            <div className='row registration__section'>
+              <div className='col-sm-12'>
+                <input type='checkbox' id='permission-data' className='registration__checkbox' required>
+                  Wyrażam zgodę na przetwarzanie danych osobowych przez Organizatora w celach informacyjnych i marketingowych zgodnie z ustawą z dnia 29 Sierpnia 1997 roku o ochronie danych osobowych Dz. U. Nr 101 poz. 926.
+                </input>
+              </div>
+            </div>
 
             <div className='row registration__section'>
               <div className='col-sm-12'>
