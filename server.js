@@ -5,9 +5,12 @@ var favicon = require('express-favicon');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var winston = require('winston');
+var basicAuth = require('basic-authentication');
 
 var CONF = require('./server/configuration');
 var registration = require('./server/src/registration_controller.js');
+
+var auth = basicAuth({user: CONF.USER, password: CONF.PASS});
 
 var app = express();
 var http = require('http').Server(app);
@@ -32,6 +35,7 @@ app.use(favicon(__dirname + '/static/favicon.ico'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', registration.index);
+app.get('/admin', auth, registration.admin);
 app.post('/registration/', registration.create);
 app.get('/registration/confirm/:token', registration.verify);
  

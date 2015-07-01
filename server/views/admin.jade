@@ -1,0 +1,23 @@
+extends layout
+block content
+  div#main
+    table.table
+      tr
+        th Lp.
+        th Opiekun 
+        th Dziecko
+        th Wiek
+        th Potwierdzone
+        th Lista rezerwowa
+        th e-mail
+        th Informacje dodatkowe
+      each reg, index in registrations
+        tr(class=(reg.confirmed ? 'success' : ''))
+          td= index + 1
+          td= reg.firstname + ' ' + reg.lastname
+          td= reg.child.firstname + ' ' + reg.child.lastname
+          td= reg.child.age
+          td= reg.confirmed
+          td= reg.waitingList
+          td= reg.email
+          td= reg.child.info
