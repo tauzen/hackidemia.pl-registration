@@ -8,6 +8,17 @@ var Registration = require('./registration_model');
 var sendmail = require('./sendmail');
 var LIMIT = require('../configuration').LIMIT;
  
+module.exports.admin = function(req, res) {
+  winston.info('Admin access');
+  Registration.find({}).exec()
+  .then(function(regs) {
+    res.render('admin.jade', { registrations: regs });
+  })
+  .then(null, function(err) {
+    winston.info('Failed to get registration list', err);
+    res.send(500);
+  });
+};
 
 module.exports.index = function(req, res) {
   winston.info('Registration index requested');
