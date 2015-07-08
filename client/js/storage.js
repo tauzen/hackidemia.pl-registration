@@ -16,7 +16,7 @@ module.exports = {
         href: 'warsztaty'
       },
       {
-        id: 'p_1',
+        id: 'p_2',
         title: 'Zgłoszenia na warsztaty',
         description: 'Warsztaty skierowane są do dzieci w wieku 8-14 lat. ' +
                       'Niemniej jednak z chęcią przywitamy też nieco starsze "dzieci" ;). ' +
@@ -27,9 +27,22 @@ module.exports = {
         href: 'zgloszenia'
       },
       {
-        id: 'p_1',
+        id: 'p_3',
         title: 'Lokalizacja',
-        description: 'Warsztat Warszawski<br/>Plac Konstytucji 4<br/>00-552 Warszawa',
+        locations: {
+          waw: {
+            date: '11 lipca 2015',
+            description: 'Warsztat Warszawski<br/>Plac Konstytucji 4<br/>00-552 Warszawa',
+            lat: 52.221973,
+            lng: 21.01772600000004
+          },
+          krk: {
+            date: '25 lipca 2015',
+            description: 'hub:raum Kraków<br /> Przemysłowa 12 <br />30-701 Kraków',
+            lat: 50.048395,
+            lng: 19.959646
+          }
+        },
         style: 'header--location',
         href: 'lokalizacja'
       }
