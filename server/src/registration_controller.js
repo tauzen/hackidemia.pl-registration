@@ -7,10 +7,11 @@ var Promise = require('promise');
 var Registration = require('./registration_model');
 var sendmail = require('./sendmail');
 var LIMIT = require('../configuration').LIMIT;
- 
+
 module.exports.admin = function(req, res) {
   winston.info('Admin access');
-  Registration.find({}).exec()
+  var filter = !req.params.location ? {} : { location: req.params.location };
+  Registration.find(filter).exec()
   .then(function(regs) {
     res.render('admin.jade', { registrations: regs });
   })
@@ -34,7 +35,7 @@ module.exports.create = function(req, res) {
   var str = req.body.firstname + req.body.lastname + Date.now();
   reg.token = crypto.createHash('md5').update(str).digest('hex');
 
-  reg.save(function(err, reg) {
+  reg.save(function(err) {
     if(err) {
       winston.info(JSON.stringify(err));
       if(err.name === 'ValidationError') {
@@ -47,7 +48,7 @@ module.exports.create = function(req, res) {
       res.send(500);
       return;
     }
-    
+
     winston.info('Registration saved in db');
     res.sendStatus(200);
     sendmail(reg);
@@ -57,7 +58,7 @@ module.exports.create = function(req, res) {
 exports.verify = function(req, res) {
   winston.info('Registration verification ', req.params.token);
   var limitReached = false;
-  
+
   Registration.count({ confirmed: true }).exec()
   .then(function(count) {
     winston.info('Currently confirmed ' + count);
@@ -83,8 +84,8 @@ exports.verify = function(req, res) {
       res.render('confirmed.jade');
     }
   })
-  .then(null, function(err) {
-    winston.info('Registration confirmation failed, no token ' + req.params.token);
+  .then(null, function() {
+    winston.info('Confirmation failed, no token ' + req.params.token);
     res.render('rejected.jade');
   });
 };

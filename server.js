@@ -16,7 +16,7 @@ var app = express();
 var http = require('http').Server(app);
 
 winston.add(winston.transports.File, { filename: CONF.SERVER_LOG });
-winston.handleExceptions(new winston.transports.File({ 
+winston.handleExceptions(new winston.transports.File({
   filename: CONF.ERROR_LOG
 }));
 
@@ -35,10 +35,10 @@ app.use(favicon(__dirname + '/static/favicon.ico'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', registration.index);
-app.get('/admin', auth, registration.admin);
+app.get('/admin/:location?', auth, registration.admin);
 app.post('/registration/', registration.create);
 app.get('/registration/confirm/:token', registration.verify);
- 
+
 http.listen(CONF.LISTEN_PORT, function(err) {
   winston.info('Server listening', CONF.LISTEN_PORT);
   if(err) {

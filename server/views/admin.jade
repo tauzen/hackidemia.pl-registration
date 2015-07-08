@@ -4,6 +4,7 @@ block content
     table.table
       tr
         th Lp.
+        th Warsztat
         th Opiekun 
         th Dziecko
         th Wiek
@@ -14,6 +15,7 @@ block content
       each reg, index in registrations
         tr(class=(reg.confirmed ? 'success' : ''))
           td= index + 1
+          td= reg.location
           td= reg.firstname + ' ' + reg.lastname
           td= reg.child.firstname + ' ' + reg.child.lastname
           td= reg.child.age
