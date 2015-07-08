@@ -6,7 +6,7 @@ var Promise = require('promise');
 
 var Registration = require('./registration_model');
 var sendmail = require('./sendmail');
-var LIMIT = require('../configuration').LIMIT;
+var WORKSHOPS = require('../configuration').WORKSHOPS;
 
 module.exports.admin = function(req, res) {
   winston.info('Admin access');
@@ -57,31 +57,37 @@ module.exports.create = function(req, res) {
 
 exports.verify = function(req, res) {
   winston.info('Registration verification ', req.params.token);
-  var limitReached = false;
+  var registration = false;
 
-  Registration.count({ confirmed: true }).exec()
-  .then(function(count) {
-    winston.info('Currently confirmed ' + count);
-    limitReached = count === LIMIT;
-    return Registration.findOne({ token: req.params.token }).exec();
-  })
+  Registration.findOne({ token: req.params.token }).exec()
   .then(function(reg) {
     if(!reg) {
       return Promise.reject();
     }
 
-    reg.confirmed = true;
-    reg.token = undefined;
-    reg.waitingList = limitReached;
+    registration = reg;
+    return Registration.count({location: reg.location, confirmed: true}).exec();
+  })
+  .then(function(count) {
+    winston.info('Currently confirmed ', count, registration.location);
 
-    return reg.save();
+    registration.confirmed = true;
+    registration.token = undefined;
+    registration.waitingList = count >= WORKSHOPS[registration.location].limit;
+
+    return registration.save();
   })
   .then(function(reg) {
     winston.info('Registration confirmed', reg.toString());
     if(reg.waitingList) {
       res.render('waiting.jade');
     } else {
-      res.render('confirmed.jade');
+      var place = WORKSHOPS[reg.location].placeConfirmation;
+
+      res.render('confirmed.jade', {
+        date: WORKSHOPS[reg.location].date,
+        place: place ? place : WORKSHOPS[reg.location].place
+      });
     }
   })
   .then(null, function() {
