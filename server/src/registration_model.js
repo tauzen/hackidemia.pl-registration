@@ -21,7 +21,7 @@ var emailValidator = validate({
   validator: 'isEmail',
   message: 'Valid email required'
 });
- 
+
 var registrationSchema = new mongoose.Schema({
   ObjectId: mongoose.Schema.ObjectId,
   date: { type: Date, default: Date.now },
@@ -32,7 +32,7 @@ var registrationSchema = new mongoose.Schema({
     age: { type: Number, min: 1, max: 18 },
     info: { type: String, maxlength: 255 }
   },
-  email: { 
+  email: {
     type: String,
     unique: true,
     required: true,
@@ -42,7 +42,8 @@ var registrationSchema = new mongoose.Schema({
   lastname: { type: String, required: true, validate: nameValidator },
   confirmed: { type: Boolean, default: false },
   waitingList: { type: Boolean, default: false },
-  token: { type: String }
+  token: { type: String },
+  location: { type: String, required: true }
 });
 
 // using message to distinguish unique violation from
@@ -53,5 +54,5 @@ registrationSchema.pre('save', function(next){
   this.updatedAt = Date.now();
   next();
 });
- 
+
 module.exports = mongoose.model('Registration', registrationSchema);

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var React = require('react');
 
@@ -11,9 +11,9 @@ var Cover = React.createClass({
         <div className='cover__inner'>
           <img className='cover__robot-image' src="/static/images/robot.png"></img>
           <div className='cover__main-description'>
-            <span className='cover__main-description__title'>Wakacyjny hackaton dla dzieci</span>
-            <br></br>
-            <span>Warszawa 11 lipca 2015</span>
+            <span className='cover__main-description__title'>Wakacyjne warsztaty dla dzieci</span>
+            <span className='cover__main-city'>Warszawa 11 lipca 2015</span>
+            <span className='cover__main-city'>Kraków 25 lipca 2015</span>
           </div>
           <button className='btn-hck' data-scroll="#zgloszenia" onClick={this.navigate}>WYŚLIJ ZGŁOSZENIE</button>
         </div>

@@ -30,6 +30,9 @@ body {
 .navbar-default {
   background-color: #ffffff;
   border: 0px;
+
+  a:focus { outline:none; }
+  a::-moz-focus-inner { border:0; }
 }
 
 .navitem__workshops {
@@ -148,7 +151,7 @@ body {
   @media (min-width: @screen-lg-min) {
     margin-top: 100px;
   };
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-size: 20px;
 }
 
@@ -156,6 +159,9 @@ body {
   font-size: 30px;
 }
 
+.cover__main-city {
+  display: block;
+}
 
 /*************************************/
 /***********PAGE: workshops***********/
@@ -212,7 +218,7 @@ body {
   font-size: 12px;
 }
 
-.registration__input {
+.registration__input, .registration__select {
   width: 100%;
   height: 30px;
   border: 1px solid @hck-orange;
@@ -220,9 +226,22 @@ body {
   padding: 0px 15px;
 }
 
-.registration__input:focus, .registration__textarea:focus {
+.registration__select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.registration__input:focus, .registration__textarea:focus, .registration__select:focus {
   outline: none;
   box-shadow: 0 0 1pt 1pt @hck-orange;
+  border: 1px solid @hck-orange;
+}
+
+/* firefox specifx fix to remove the ugly dotted border on focus */
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
 }
 
 .registration__textarea {
@@ -306,6 +325,3 @@ body {
 .footer__contact a{
   color: white;
 }
-
-
-
