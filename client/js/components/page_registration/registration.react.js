@@ -28,13 +28,19 @@ var RegistrationPage = React.createClass({
       });
   },
 
+  handleLocationChange: function(location) {
+    this.props.onLocationChange(location);
+  },
+
   render: function() {
     var pageData = JSON.parse(localStorage.getItem('pages'))[1],
         content = null;
 
     switch(this.state.currentView) {
       case "form":
-          content = <RegistrationForm onHandleSubmit={this.createRegistration}/>
+          content = <RegistrationForm 
+                      onHandleSubmit={this.createRegistration}
+                      onLocationChange={this.handleLocationChange} />
           break;
       case "loading":
           content = <RegistrationLoading/>

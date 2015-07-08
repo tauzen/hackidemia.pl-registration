@@ -11,9 +11,27 @@ var RegistrationForm = React.createClass({
     this.props.onHandleSubmit($form.attr("action"), $form.serialize());
   },
 
+  handleLocationChange: function(e) {
+    this.props.onLocationChange(e.target.value);
+  },
+
   render: function() {
     return (
          <form name='registration' action='/registration' method='post' onSubmit={this.handleSubmit}>
+            <div className='row registration__section'>
+              <div className='col-sm-12 registration__subtitle'>Lokalizacja warsztatów</div>
+              <div className='col-sm-8'>
+                <label className='registration__label' for='location'>
+                  Miejsce i data <span className='registration__info'>(pole wymagane)</span>
+                </label>
+                <select name='location' className='form-control registration__select' required onChange={this.handleLocationChange}>
+                  <option selected disabled hidden value=''>Proszę wybrać lokalizację i datę</option> 
+                  <option value='waw'>Warszawa, 11 lipiec 2015</option>
+                  <option value='krk'>Kraków, 25 lipiec 2015</option>
+                </select>
+              </div>
+             </div>
+
             <div className='row registration__section'>
               <div className='col-sm-12 registration__subtitle'>Dane uczestnika warsztatów</div>
               <div className='col-sm-4'>

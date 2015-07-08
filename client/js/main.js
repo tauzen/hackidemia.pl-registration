@@ -19,13 +19,17 @@ var LocationPage = require('./components/page_location/location.react');
 var Footer = require('./components/footer.react');
 
 var App = React.createClass({
+  handleLocationChange: function(location) {
+    console.log('got location change', location);
+  },
+
   render: function() {
     return(
       <div>
         <Menu/>
         <Cover/>
         <WorkshopsPage/>
-        <RegistrationPage/>
+        <RegistrationPage onLocationChange={this.handleLocationChange} />
         <LocationPage/>
         <Footer/>
       </div>
