@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   require('jit-grunt')(grunt);
+  var PORT = require('./server/configuration').LISTEN_PORT;
 
   grunt.initConfig({
     less: {
@@ -10,7 +11,7 @@ module.exports = function(grunt) {
           optimization: 2
         },
         files: {
-          'static/css/style.css':'client/style/style.less'
+          'static/css/style.css': 'client/style/style.less'
         }
       }
     },
@@ -45,8 +46,19 @@ module.exports = function(grunt) {
         files: 'client/js/**/*.js',
         tasks: ['browserify:dev']
       }
+    },
+    browserSync: {
+      dev: {
+        bsFiles: {
+          src: ['static/css/style.css', 'static/js/client.js']
+        },
+        options: {
+          watchTask: true,
+          proxy: 'localhost:' + PORT
+        }
+      }
     }
   });
-  grunt.registerTask('default', ['less','browserify:dev', 'watch']);
+  grunt.registerTask('default', ['less', 'browserify:dev', 'browserSync', 'watch']);
   grunt.registerTask('dist', ['less', 'browserify:production']);
 };
