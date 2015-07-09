@@ -21,7 +21,7 @@ module.exports = {
         description: 'Warsztaty skierowane są do dzieci w wieku 8-14 lat. ' +
                       'Niemniej jednak z chęcią przywitamy też nieco starsze "dzieci" ;). ' +
                       'Podczas warsztatów niezbędna jest obecność rodzica lub opiekuna. ' +
-                      'Warsztaty odbęda się 11 lipca 2015 w godzinach 10.00-15.00. ' +
+                      'Warsztaty odbędą się w godzinach 10.00-15.00, 11 lipca 2015 w Warszawie oraz 25 lipca w Krakowie. ' +
                       'Chęć udziału nalezy zgłosić korzystając z poniższego formularza.',
         style: 'header--registration',
         href: 'zgloszenia'
