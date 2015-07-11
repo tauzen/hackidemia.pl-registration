@@ -20,7 +20,7 @@ var Footer = require('./components/footer.react');
 
 var App = React.createClass({
   getInitialState: function() {
-    return {location: 'waw'};
+    return {location: 'krk'};
   },
 
   handleLocationChange: function(location) {

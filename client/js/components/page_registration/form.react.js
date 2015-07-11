@@ -18,7 +18,7 @@ var RegistrationForm = React.createClass({
   render: function() {
     return (
          <form name='registration' action='/registration' method='post' onSubmit={this.handleSubmit}>
-            <div className='row registration__section'>
+            {/*<div className='row registration__section'>
               <div className='col-sm-12 registration__subtitle'>Lokalizacja warsztatów</div>
               <div className='col-sm-8'>
                 <label className='registration__label' for='location'>
@@ -30,8 +30,8 @@ var RegistrationForm = React.createClass({
                   <option value='krk'>Kraków, 25 lipiec 2015</option>
                 </select>
               </div>
-             </div>
-
+             </div>*/}
+            <input name='location' type='hidden' value='krk' />
             <div className='row registration__section'>
               <div className='col-sm-12 registration__subtitle'>Dane uczestnika warsztatów</div>
               <div className='col-sm-4'>
@@ -50,7 +50,7 @@ var RegistrationForm = React.createClass({
                 <label className='registration__label' for='child.age'>
                   Wiek
                 </label>
-                <input className='registration__input col-sm-2' id='child.age' name='child.age' type='number' placeholder='8 - 14 lat' min='8' max='14'></input>
+                <input className='registration__input col-sm-2' id='child.age' name='child.age' type='number' placeholder='6 - 12 lat' min='6' max='12'></input>
               </div>
               <div className='col-sm-8'>
                 <label className='registration__label' for='child.info'>
