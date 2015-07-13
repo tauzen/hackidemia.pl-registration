@@ -21,7 +21,7 @@ module.exports = {
         description: 'Warsztaty skierowane są do dzieci w wieku 6-12 lat. ' +
                       'Niemniej jednak z chęcią przywitamy też nieco starsze "dzieci" ;). ' +
                       'Podczas warsztatów niezbędna jest obecność rodzica lub opiekuna. ' +
-                      'Warsztaty odbędą się w godzinach 10.00-15.00 25 lipca w Krakowie. ' +
+                      'Warsztaty odbędą się w godzinach 11.00-15.00 25 lipca w Krakowie. ' +
                       'Chęć udziału nalezy zgłosić korzystając z poniższego formularza.',
         style: 'header--registration',
         href: 'zgloszenia'
