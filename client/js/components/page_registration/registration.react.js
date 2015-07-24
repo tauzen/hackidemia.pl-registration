@@ -6,10 +6,11 @@ var RegistrationForm = require('./form.react.js');
 var RegistrationLoading = require('./loading.react.js');
 var RegistrationSuccess = require('./success.react.js');
 var RegistrationError = require('./error.react.js');
+var RegistrationFull = require('./full.react.js');
 
 var RegistrationPage = React.createClass({
   getInitialState: function(){
-    return {currentView: "form"}
+    return {currentView: "full"};
   },
 
   createRegistration: function(action, data){
@@ -50,6 +51,9 @@ var RegistrationPage = React.createClass({
           break;
       case "error":
           content = <RegistrationError status={this.state.status}/>
+          break;
+      case "full":
+          content = <RegistrationFull/>
           break;
       default:
           content = <RegistrationForm onHandleSubmit={this.createRegistration}/>

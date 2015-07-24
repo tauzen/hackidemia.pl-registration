@@ -19,7 +19,7 @@ var Footer = React.createClass({
                 </a>
               </div>
               <div className='circle'>
-                <a href="https://www.facebook.com/Hackidemia" target="_blank" className="facebook">
+                <a href="https://www.facebook.com/hackidemiaPolska" target="_blank" className="facebook">
                   <i className="fa fa-facebook fa-lg"></i>
                 </a>
               </div>
